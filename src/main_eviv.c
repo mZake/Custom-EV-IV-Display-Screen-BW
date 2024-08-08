@@ -247,7 +247,7 @@ const u8 gText_CensorEgg[]  = _("{CLEAR_TO 12}?{CLEAR_TO 42}?{CLEAR_TO 66}?");
 
 const u8 gText_BsEvIv[] = _("BS{CLEAR_TO 30}EV{CLEAR_TO 54}IV");
 
-const u8 gText_eviv_Total[] = _("TOTAL:");
+const u8 gText_eviv_Total[] = _("Total:");
 const u8 gText_Percent[] = _("% ");
 const u8 gText_PokeSum_EvIv[] = _("EV-IV");
 const u8 gText_eviv_Tittle[] = _("POKéMON EV-IV");
@@ -270,7 +270,7 @@ const u8 gText_Your[]   = _("Tu ");
 const u8 gText_Is[]     = _(" es ");
 const u8 gText_Happy[]  = _("Felicidad: ");
 const u8 gText_HiddenPower[] = _("Poder oculto");
-const u8 gText_Power[]  = _("  Potencia: ");
+const u8 gText_Power[]  = _("  Power: ");
 
 const u8 gText_Steps_to_hatching[]  = _("Pasos para\neclosionar: ");
 
