@@ -56,7 +56,7 @@
 
 //coordenada x del sprite pokémon, se mide en tiles de 8 pixeles
 //x coordinate of the pokémon sprite, measured in tiles of 8 pixels
-#define PICMON_X    19
+#define PICMON_X    18
 
 //coordenada y del sprite pokémon, se mide en tiles de 8 pixeles
 //y coordinate of the pokémon sprite, measured in tiles of 8 pixels
@@ -157,8 +157,8 @@ static const struct BgTemplate sBg_Templates[] = {
 #define WINDOW4_BASEBLOCK (WINDOW3_WIDTH * WINDOW3_HEIGTH) + WINDOW3_BASEBLOCK
 
 //window 5 = POKéMON EV-IV          +SEL. (A)(B)EXIT
-#define WINDOW5_WIDTH   29
-#define WINDOW5_HEIGTH  2
+#define WINDOW5_WIDTH   0
+#define WINDOW5_HEIGTH  0
 #define WINDOW5_BASEBLOCK (WINDOW4_WIDTH * WINDOW4_HEIGTH) + WINDOW4_BASEBLOCK
 
 static const struct WindowTemplate sWindows_templates[] =
@@ -166,7 +166,7 @@ static const struct WindowTemplate sWindows_templates[] =
     [WIN_POKEMON_NAME] = 
     {
         .bg = 0,
-        .tilemapLeft = 1,
+        .tilemapLeft = 2,
         .tilemapTop = 2,
         .width = WINDOW0_WIDTH,
         .height = WINDOW0_HEIGTH,
@@ -176,7 +176,7 @@ static const struct WindowTemplate sWindows_templates[] =
     [WIN_STATS] = 
     {
         .bg = 0,
-        .tilemapLeft = 1,
+        .tilemapLeft = 2,
         .tilemapTop = 4,
         .width = WINDOW1_WIDTH,
         .height = WINDOW1_HEIGTH,
@@ -186,7 +186,7 @@ static const struct WindowTemplate sWindows_templates[] =
     [WIN_BOTTOM_BOX] = 
     {
         .bg = 0,
-        .tilemapLeft = 1,
+        .tilemapLeft = 2,
         .tilemapTop = 15,
         .width = WINDOW2_WIDTH,
         .height = WINDOW2_HEIGTH,
@@ -196,7 +196,7 @@ static const struct WindowTemplate sWindows_templates[] =
     [WIN_HIDDEN_POWER] = 
     {
         .bg = 0,
-        .tilemapLeft = 17,
+        .tilemapLeft = 20,
         .tilemapTop = 15,
         .width = WINDOW3_WIDTH,
         .height = WINDOW3_HEIGTH,
@@ -206,8 +206,8 @@ static const struct WindowTemplate sWindows_templates[] =
     [WIN_TYPE] = 
     {
         .bg = 0,
-        .tilemapLeft = 25,
-        .tilemapTop = 15,
+        .tilemapLeft = 18,
+        .tilemapTop = 17,
         .width = WINDOW4_WIDTH,
         .height = WINDOW4_HEIGTH,
         .paletteNum = 14,
@@ -259,18 +259,18 @@ const u8 gText_PokeSum_Controls_Page[] = _("{DPAD_LEFTRIGHT}PÁG.");
 const u8 gText_PokeSum_Controls_Page_EvIv[] = _("{DPAD_LEFTRIGHT}PÁG. {A_BUTTON}EV-IV");
 const u8 gText_PokeSum_NoData[] = _("No data");
 const u8 gText_Cancel2[] = _("CANCEL");
-const u8 gText_eviv_Hp[]     = _("PS");
-const u8 gText_eviv_Atk[]    = _("ATAQUE");
-const u8 gText_eviv_Def[]    = _("DEFENSA");
-const u8 gText_eviv_SpAtk[]  = _("ATQ.ESP.");
-const u8 gText_eviv_SpDef[]  = _("DEF.ESP.");
-const u8 gText_eviv_Speed[]  = _("VELOCID.");
+const u8 gText_eviv_Hp[]     = _(" ");
+const u8 gText_eviv_Atk[]    = _(" ");
+const u8 gText_eviv_Def[]    = _(" ");
+const u8 gText_eviv_SpAtk[]  = _(" ");
+const u8 gText_eviv_SpDef[]  = _(" ");
+const u8 gText_eviv_Speed[]  = _(" ");
 
 const u8 gText_Your[]   = _("Tu ");
 const u8 gText_Is[]     = _(" es ");
 const u8 gText_Happy[]  = _("Felicidad: ");
 const u8 gText_HiddenPower[] = _("Poder oculto");
-const u8 gText_Power[]  = _("Potencia: ");
+const u8 gText_Power[]  = _("  Potencia: ");
 
 const u8 gText_Steps_to_hatching[]  = _("Pasos para\neclosionar: ");
 
@@ -281,18 +281,18 @@ const u8 gText_PokeSum_Controls_Page[] = _("{DPAD_LEFTRIGHT}PAGE");
 const u8 gText_PokeSum_Controls_Page_EvIv[] = _("{DPAD_LEFTRIGHT}PAGE {A_BUTTON}EV-IV");
 const u8 gText_PokeSum_NoData[] = _("No data");
 const u8 gText_Cancel2[] = _("CANCEL");
-const u8 gText_eviv_Hp[]     = _("HP");
-const u8 gText_eviv_Atk[]    = _("ATTACK");
-const u8 gText_eviv_Def[]    = _("DEFENSE");
-const u8 gText_eviv_SpAtk[]  = _("SP.ATK.");
-const u8 gText_eviv_SpDef[]  = _("SP.DEF.");
-const u8 gText_eviv_Speed[]  = _("SPEED");
+const u8 gText_eviv_Hp[]     = _(" ");
+const u8 gText_eviv_Atk[]    = _(" ");
+const u8 gText_eviv_Def[]    = _(" ");
+const u8 gText_eviv_SpAtk[]  = _(" ");
+const u8 gText_eviv_SpDef[]  = _(" ");
+const u8 gText_eviv_Speed[]  = _(" ");
 
 const u8 gText_Your[]   = _("Your ");
 const u8 gText_Is[]     = _(" is ");
 const u8 gText_Happy[]  = _("Happiness: ");
 const u8 gText_HiddenPower[] = _("Hidden power");
-const u8 gText_Power[]  = _("Power: ");
+const u8 gText_Power[]  = _("  Power: ");
 
 const u8 gText_Steps_to_hatching[]  = _("Steps to\nhatch: ");
 #endif
@@ -1027,12 +1027,12 @@ static void PrintWindow0(struct Pokemon *mon)
         else
             x = 10;
     }
-    AddTextPrinterParameterized3(WIN_POKEMON_NAME, 2, x, 2, sGrayTextColor, 0, gStringVar4);
+    AddTextPrinterParameterized3(WIN_POKEMON_NAME, 2, x, 2, sBlackTextColor, 0, gStringVar4);
 
-    AddTextPrinterParameterized3(WIN_POKEMON_NAME, 2, 0x3C, 2, sGrayTextColor, 0, gText_BsEvIv);
+    AddTextPrinterParameterized3(WIN_POKEMON_NAME, 2, 0x3C, 2, sBlackTextColor, 0, gText_BsEvIv);
 
     GetMonNickname(mon, gStringVar4);
-    AddTextPrinterParameterized3(WIN_POKEMON_NAME, 2, 0x90, 2, sGrayTextColor, 0, gStringVar4);
+    AddTextPrinterParameterized3(WIN_POKEMON_NAME, 2, 0x90, 2, sBlackTextColor, 0, gStringVar4);
 }
 
 static void PrintWindow1(u8 nature, u8 isEgg)
@@ -1190,14 +1190,14 @@ static void PrintWindow_HiddenPower(u8 isEgg)
 
     StringCopy(gStringVar4, gText_HiddenPower);
 
-    AddTextPrinterParameterized3(WIN_HIDDEN_POWER, 0, 4, 3, sWhiteTextColor, 0, gStringVar4);
+    AddTextPrinterParameterized3(WIN_HIDDEN_POWER, 0, 4, 3, sBlackTextColor, 0, gStringVar4);
 
     if (!isEgg)
     {
         ConvertIntToDecimalStringN(gStringVar1, power, STR_CONV_MODE_LEFT_ALIGN, GetDigitsDec(power));
         StringCopy(gStringVar4, gText_Power);
         StringAppend(gStringVar4, gStringVar1);
-        AddTextPrinterParameterized3(WIN_HIDDEN_POWER, 0, 16, 16, sWhiteTextColor, 0, gStringVar4);
+        AddTextPrinterParameterized3(WIN_HIDDEN_POWER, 0, 16, 16, sBlackTextColor, 0, gStringVar4);
         BlitMoveInfoIcon(WIN_TYPE, type + 1, 2, 4);
     }
     else
